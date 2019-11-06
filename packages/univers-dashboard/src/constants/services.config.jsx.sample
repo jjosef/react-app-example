@@ -1,0 +1,16 @@
+export const services = {
+  url: (service, path) => {
+    let env = (['localhost', '0.0.0.0'].indexOf(window.location.hostname) > -1) ? 'dev' : 'production';
+    return services[service][env] + path;
+  },
+  orders: {
+    dev: 'http://localhost:3459',
+    production: 'https://uh-univers.appspot.com'
+  },
+  functions: {
+    dev: 'https://us-central1-uh-univers.cloudfunctions.net',
+    production: 'https://us-central1-uh-univers.cloudfunctions.net'
+  }
+}
+
+export default services;

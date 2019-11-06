@@ -1,0 +1,11 @@
+{
+  "shipping_api": {
+    "dev": "http://localhost:3460",
+    "production": "https://PROJECT_ID-api-shipping.appspot.com"
+  },
+  "utility_api": {
+    "dev": "http://localhost:3458",
+    "production": "https://PROJECT_ID-api-utilities.appspot.com"
+  },
+  "firebase_functions_uri": "https://PROJECT_ID.cloudfunctions.net"
+}

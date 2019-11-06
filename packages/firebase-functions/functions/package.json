@@ -1,0 +1,29 @@
+{
+  "name": "univers-dashboard-functions",
+  "version": "1.0.0",
+  "description": "Firebase Functions for Univers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "uh-sem-blee, Co",
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "@google-cloud/storage": "^1.1.1",
+    "child-process-promise": "^2.2.1",
+    "cors": "^2.8.3",
+    "express": "^4.15.2",
+    "firebase-admin": "^4.2.1",
+    "firebase-functions": "^0.5.6",
+    "imagemagick": "^0.1.3",
+    "mailgun-js": "^0.11.2",
+    "medium-sdk": "0.0.4",
+    "mkdirp": "^0.5.1",
+    "mkdirp-promise": "^5.0.1",
+    "nodemailer": "^4.0.1",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.0",
+    "taxjar": "^1.4.1",
+    "validator": "^7.2.0"
+  }
+}

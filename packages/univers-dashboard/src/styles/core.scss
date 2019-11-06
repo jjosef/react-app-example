@@ -1,0 +1,67 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Roboto+Mono:400,500,700);
+
+@import '~normalize.css/normalize';
+
+@import '~react-univers-crud/dist/react-univers-crud.css';
+
+// Add your Bootstrap overrides here:
+// Example:
+//
+// $btn-font-weight: bold;
+// $brand-primary: #000;
+// @import '~bootstrap/scss/bootstrap.scss';
+$use-flex: true;
+$font-family-sans-serif: 'Roboto', "Helvetica Neueu", sans-serif;
+$brand-primary: #039be5;
+$border-radius: 2px;
+$grid-gutter-width-base: 24px;
+
+$btn-padding-x: 16px;
+$btn-secondary-color: #039be5;
+$btn-secondary-bg: transparent;
+
+@import '~bootstrap/scss/bootstrap.scss';
+
+$mdi-font-path: "~mdi/fonts";
+@import '~mdi/scss/materialdesignicons.scss';
+
+@import 'base';
+
+// Some best-practice CSS that's useful for most apps
+// Just remove them if they're not what you want
+html {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: #ECEFF1;
+  .btn {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  font-family: 'Roboto', "Helvetica Neueu", sans-serif;
+  button {
+    font-family: 'Roboto', "Helvetica Neueu", sans-serif;
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.card {
+
+}
+
+@import '~react-draft-wysiwyg/dist/react-draft-wysiwyg.css';

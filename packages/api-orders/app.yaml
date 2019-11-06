@@ -1,0 +1,7 @@
+runtime: nodejs
+env: flex
+skip_files:
+- app
+automatic_scaling:
+  min_num_instances: 1 # this should be changed when ready for production
+  max_num_instances: 4

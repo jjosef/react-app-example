@@ -1,0 +1,16 @@
+.staff-content {
+  .form-section.permissions {
+    > .form-section {
+      .form-group {
+        display: inline-block;
+        min-width: 25%;
+      }
+    }
+  }
+}
+
+.permissions-table {
+  td:first-child {
+    text-transform: capitalize;
+  }
+}

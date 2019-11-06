@@ -1,0 +1,29 @@
+import React from 'react'
+import { Link } from 'react-router';
+import './styles.scss'
+import { database as D, routeStates as R } from '~/constants/';
+import { connect } from 'react-redux';
+import Crud from 'react-univers-crud';
+
+export class Root extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div className="console-module permissions">
+
+      </div>
+    )
+  }
+}
+
+const mapStateToProps = (state, ownProps) => {
+	return { database: state.database };
+};
+
+const mapDispatchToProps = {
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Root)

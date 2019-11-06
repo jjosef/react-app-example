@@ -1,0 +1,46 @@
+.variant {
+  .form-group.row {
+    margin-bottom: 0;
+    margin-left: -6px;
+    margin-right: -6px;
+    .col, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6 {
+      padding-left: 6px;
+      padding-right: 6px;
+    }
+    .btn-link {
+      padding-left: .5rem;
+      padding-right: .5rem;
+    }
+  }
+}
+
+.related-products {
+  .related-product {
+    position: relative;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 2px;
+    > span {
+      display: block;
+    }
+    .product-image {
+      img {
+        display: block;
+        width: 100%;
+        max-height: 80px;
+        object-fit: cover;
+        object-position: center center;
+      }
+    }
+    .product-name {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    > a {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}

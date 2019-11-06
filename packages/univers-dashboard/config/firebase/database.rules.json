@@ -1,0 +1,126 @@
+{
+  "rules": {
+    ".read": "root.child('user_permissions').child(auth.uid).child('admin').val() === true",
+    ".write": "root.child('user_permissions').child(auth.uid).child('admin').val() === true",
+    "imager": {
+      "$organization": {
+        ".read": "true",
+        ".write": "true",
+        ".indexOn": ["original_url"]
+      }
+    },
+    "organization_users": {
+      "$user_id": {
+        ".read": "$user_id === auth.uid",
+        ".write": "$user_id === auth.uid"
+      }
+    },
+    "organizations": {
+      ".read": "true",
+      "$organization": {
+        ".read": "root.child('user_permissions').child(auth.uid).hasChild($organization)",
+        ".write": "!data.exists() || root.child('user_permissions').child(auth.uid).child($organization).child('owner').val() === true"
+      }
+    },
+    "orders": {
+      "$organization": {
+        ".read": "root.child('user_permissions').child(auth.uid).child($organization).child('orders').child('r').val() === true || root.child('user_permissions').child(auth.uid).child($organization).child('owner').val() === true",
+        "$order_id": {
+          ".read": "root.child('orders').child($organization).child($order_id).child('orderee').child('uid').val() === auth.uid || root.child('user_permissions').child(auth.uid).child($organization).child('orders').child('r').val() === true || root.child('user_permissions').child(auth.uid).child($organization).child('owner').val() === true",
+          ".write": "root.child('user_permissions').child(auth.uid).child($organization).child('orders').child('w').val() === true || root.child('user_permissions').child(auth.uid).child($organization).child('owner').val() === true"
+        }
+      }
+    },
+    "products": {
+      "$organization": {
+        ".read": "true",
+        ".write": "root.child('user_permissions').child(auth.uid).child($organization).child('products').child('w').val() === true || root.child('user_permissions').child(auth.uid).child($organization).child('owner').val() === true"
+      }
+    },
+    "product_categories": {
+      "$organization": {
+        ".read": "true",
+        ".write": "root.child('user_permissions').child(auth.uid).child($organization).child('products').child('w').val() === true || root.child('user_permissions').child(auth.uid).child($organization).child('owner').val() === true"
+      }
+    },
+    "customers": {
+      "$organization": {
+        ".read": "root.child('user_permissions').child(auth.uid).child($organization).child('customers').child('r').val() === true || root.child('user_permissions').child(auth.uid).child($organization).child('owner').val() === true",
+        ".write": "root.child('user_permissions').child(auth.uid).child($organization).child('customers').child('w').val() === true || root.child('user_permissions').child(auth.uid).child($organization).child('owner').val() === true"
+      }
+    },
+    "staff": {
+      "$organization": {
+        ".read": "root.child('user_permissions').child(auth.uid).child($organization).child('owner').val() === true",
+        ".write": "root.child('user_permissions').child(auth.uid).child($organization).child('owner').val() === true"
+      }
+    },
+    "settings": {
+      "$organization": {
+        ".read": "root.child('user_permissions').child(auth.uid).child($organization).child('settings').child('r').val() === true || root.child('user_permissions').child(auth.uid).child($organization).child('owner').val() === true",
+        ".write": "root.child('user_permissions').child(auth.uid).child($organization).child('settings').child('w').val() === true || root.child('user_permissions').child(auth.uid).child($organization).child('owner').val() === true"
+      }
+    },
+    "discounts": {
+      "$organization": {
+        ".read": "root.child('user_permissions').child(auth.uid).child($organization).child('discounts').child('r').val() === true || root.child('user_permissions').child(auth.uid).child($organization).child('owner').val() === true",
+        ".write": "root.child('user_permissions').child(auth.uid).child($organization).child('discounts').child('w').val() === true || root.child('user_permissions').child(auth.uid).child($organization).child('owner').val() === true"
+      }
+    },
+    "integrations": {
+      "$organization": {
+        ".read": "root.child('user_permissions').child(auth.uid).child($organization).child('integrations').child('r').val() === true || root.child('user_permissions').child(auth.uid).child($organization).child('owner').val() === true",
+        ".write": "root.child('user_permissions').child(auth.uid).child($organization).child('integrations').child('w').val() === true || root.child('user_permissions').child(auth.uid).child($organization).child('owner').val() === true"
+      }
+    },
+    "organization_apps": {
+      "$organization": {
+        ".read": "root.child('user_permissions').child(auth.uid).child($organization).child('integrations').child('r').val() === true || root.child('user_permissions').child(auth.uid).child($organization).child('owner').val() === true",
+        ".write": "root.child('user_permissions').child(auth.uid).child($organization).child('integrations').child('w').val() === true || root.child('user_permissions').child(auth.uid).child($organization).child('owner').val() === true"
+      }
+    },
+    "organization_scripts": {
+      "$organization": {
+        ".read": "root.child('user_permissions').child(auth.uid).child($organization).child('integrations').child('r').val() === true || root.child('user_permissions').child(auth.uid).child($organization).child('owner').val() === true",
+        ".write": "root.child('user_permissions').child(auth.uid).child($organization).child('integrations').child('w').val() === true || root.child('user_permissions').child(auth.uid).child($organization).child('owner').val() === true"
+      }
+    },
+    "shipping_carriers": {
+      "$organization": {
+        ".read": "root.child('user_permissions').child(auth.uid).child($organization).child('integrations').child('r').val() === true || root.child('user_permissions').child(auth.uid).child($organization).child('owner').val() === true",
+        ".write": "root.child('user_permissions').child(auth.uid).child($organization).child('integrations').child('w').val() === true || root.child('user_permissions').child(auth.uid).child($organization).child('owner').val() === true"
+      }
+    },
+    "shipping_labels": {
+      "$organization": {
+        ".read": "true",
+        ".write": "root.child('user_permissions').child(auth.uid).child($organization).child('orders').child('w').val() === true || root.child('user_permissions').child(auth.uid).child($organization).child('owner').val() === true"
+      }
+    },
+    "organization_design": {
+      "$organization": {
+        ".read": "root.child('user_permissions').child(auth.uid).child($organization).child('integrations').child('r').val() === true || root.child('user_permissions').child(auth.uid).child($organization).child('owner').val() === true",
+        ".write": "root.child('user_permissions').child(auth.uid).child($organization).child('integrations').child('w').val() === true || root.child('user_permissions').child(auth.uid).child($organization).child('owner').val() === true"
+      }
+    },
+    "webhooks": {
+      "$organization": {
+        ".read": "root.child('user_permissions').child(auth.uid).child($organization).child('integrations').child('r').val() === true || root.child('user_permissions').child(auth.uid).child($organization).child('owner').val() === true",
+        ".write": "root.child('user_permissions').child(auth.uid).child($organization).child('integrations').child('w').val() === true || root.child('user_permissions').child(auth.uid).child($organization).child('owner').val() === true"
+      }
+    },
+    "user_permissions": {
+      "$user_id": {
+        ".read": "auth.uid === $user_id",
+        "$organization": {
+          ".read": "auth.uid === $user_id",
+          ".write": "!data.exists() || root.child('user_permissions').child(auth.uid).child($organization).child('owner').val() === true"
+        },
+        "admin": {
+          ".write": "root.child('user_permissions').child(auth.uid).child('admin').val() === true"
+        }
+      },
+      ".write": "!data.exists() || root.child('user_permissions').child(auth.uid).child('admin').val() === true"
+    }
+  }
+}

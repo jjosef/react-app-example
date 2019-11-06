@@ -1,0 +1,10 @@
+/****
+ * Put the config here from your Firebase console.
+ */
+export default {
+  apiKey: "",
+  authDomain: "",
+  databaseURL: "",
+  storageBucket: "",
+  messagingSenderId: ""
+};

@@ -1,0 +1,24 @@
+@import '~bootstrap/scss/_variables.scss';
+.header {
+  .alerts {
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+    .alert {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      padding: .75rem 1.25rem;
+      margin-bottom: 1rem;
+      border: 1px solid transparent;
+      border-radius: .25rem;
+    }
+    &.error {
+      .alert {
+        background: #f2dede;
+        border-color: #ebcccc;
+        color: #a94442;
+      }
+    }
+  }
+}
